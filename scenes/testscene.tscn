@@ -1,16 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwmay2xbb0ip3"]
+[gd_scene load_steps=5 format=3 uid="uid://bwmay2xbb0ip3"]
 
 [ext_resource type="Texture2D" uid="uid://daylpqbqnf0tu" path="res://assets/textures/backgrounds/5.png" id="1_2o21q"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_otjlx"]
 [ext_resource type="PackedScene" uid="uid://c1362jh8lkdbj" path="res://scenes/player.tscn" id="2_2d65w"]
+[ext_resource type="Script" path="res://scripts/background/Background.gd" id="2_a2fvx"]
 
 [node name="Root" type="Node2D"]
+script = ExtResource("1_otjlx")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Node2D" parent="."]
+script = ExtResource("2_a2fvx")
+
+[node name="Texture" type="Sprite2D" parent="Background"]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(304, -9678)
+position = Vector2(302, -10098)
 scale = Vector2(1.7, 1.7)
 texture = ExtResource("1_2o21q")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
 
 [node name="Player" parent="." instance=ExtResource("2_2d65w")]
 position = Vector2(297, 961)

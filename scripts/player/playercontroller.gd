@@ -3,7 +3,10 @@ extends Node2D
 # Speed at which the node moves.
 var speed = 500
 var ship_length = 64
-var screen_size = Vector2(606, 1080)
+var screen_size = null
+
+func _ready():
+	screen_size = get_viewport_rect().size
 
 func _process(delta):
 	var velocity = Vector2(0, 0)
