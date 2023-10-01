@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1362jh8lkdbj"]
+
+[ext_resource type="Script" path="res://scripts/player/playercontroller.gd" id="1_8t4vt"]
+[ext_resource type="Texture2D" uid="uid://coyqaqwg3w16a" path="res://assets/textures/player.png" id="1_ygdhd"]
+[ext_resource type="Texture2D" uid="uid://c2kat71r15qbj" path="res://assets/textures/shipcore.png" id="2_elfjg"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_8t4vt")
+
+[node name="Player" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("1_ygdhd")
+
+[node name="Shipcore" type="Sprite2D" parent="Player"]
+texture_filter = 1
+position = Vector2(0, 10)
+scale = Vector2(2, 2)
+texture = ExtResource("2_elfjg")
